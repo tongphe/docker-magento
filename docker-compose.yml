@@ -1,0 +1,42 @@
+version: '2'
+services:
+  magento-php56:
+    container_name: magento-php56
+    image: magento-php56
+    build: 
+      context: ./php56/
+      dockerfile: Dockerfile
+    volumes:
+      # change first path to local document root
+      - /var/www/html:/var/www/html
+    ports:
+      - "8056:80"
+    links:
+      - mysql56
+    # mysql host in code will be 'mysql56'
+
+  magento-php70:
+    container_name: magento-php70
+    image: magento-php70
+    build: 
+      context: ./php70/
+      dockerfile: Dockerfile
+    volumes:
+      # change first path to local document root
+      - /var/www/html:/var/www/html
+    ports:
+      - "8070:80"
+    links:
+      - mysql56
+    # mysql host in code will be 'mysql56'
+
+  mysql56:
+    container_name: mysql56
+    image: mysql:5.6
+    environment:
+      MYSQL_ROOT_PASSWORD: abc123
+    ports:
+      - "3306:3306"
+    volumes:
+      # local data dir /var/lib/mysql56 should be chmod 777
+      - /var/lib/mysql56:/var/lib/mysql
