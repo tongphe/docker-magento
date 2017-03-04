@@ -9,6 +9,7 @@ services:
     volumes:
       # change first path to local document root
       - /var/www/html:/var/www/html
+      - /var/log/php56:/var/log/httpd
     ports:
       - "8056:80"
     links:
@@ -24,6 +25,7 @@ services:
     volumes:
       # change first path to local document root
       - /var/www/html:/var/www/html
+      - /var/log/php70:/var/log/httpd
     ports:
       - "8070:80"
     links:

@@ -1,5 +1,5 @@
 FROM centos:7
-MAINTAINER Fer Uria <fauria@gmail.com>
+MAINTAINER tongphe <tongphe.org@gmail.com>
 LABEL Description="Linux + Apache 2.4 + PHP 7.0.15. CentOS 7 based for Magento 1 and 2" \
 	Usage="docker build -t docker-php70; docker run -d -p [HOST PORT NUMBER]:80 -v [HOST WWW DOCUMENT ROOT]:/var/www/html docker-php70" \
 	Version="1.0"
