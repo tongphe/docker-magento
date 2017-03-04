@@ -1,0 +1,12 @@
+[Unit]
+Description=Docker php56 container
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/docker start -a magento-php56
+ExecStop=/usr/bin/docker stop -t 2 magento-php56
+
+[Install]
+WantedBy=default.target
